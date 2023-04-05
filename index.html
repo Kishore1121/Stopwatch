@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="stopwatchcontainer">
+            <h1 id="name">STOPWATCH</h1>
+            <p class="time"><span id="seconds">00</span>: <span id="tens">00</span></p>
+            <div class="button">
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+                <button type="reset" id="reset">Reset</button>
+            </div>
+
+    </div>
+
+
+    <script>
+        let seconds =0;
+        let tens = 0;
+        const appendseconds = document.getElementById('seconds');
+        const appendtens = document.getElementById('tens');
+        const btnstart = document.getElementById('start');
+        const btnstop = document.getElementById('stop');
+        const btnreset = document.getElementById('reset');
+        let timercount;
+
+        function timer() {
+            tens++;
+            if(tens < 9){
+                appendtens.innerHTML = '0'+tens;
+            }
+             if(tens > 9){
+                appendtens.innerHTML = tens;
+             }
+             if(tens > 99 ){
+                seconds++;
+                appendseconds.innerHTML = '0'+ seconds;
+                tens=0;
+                appendtens.innerHTML = '0'+ tens;
+             }
+             if( seconds > 9){
+                appendseconds.innerHTML = seconds;
+             }
+        }
+
+        btnstart.onclick = function () {
+                timercount = setInterval(timer);
+            };
+
+            btnstop.onclick = function () {
+                clearInterval(timercount);
+            };
+
+            btnreset.onclick = function () {
+                clearInterval(timercount);
+                tens = "00";
+                seconds = "00";
+                appendseconds.innerHTML = seconds;
+                appendtens.innerHTML = tens;
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+}
+
+.stopwatchcontainer{
+    background-color: orange;
+    color: white;
+    height: 30vh;
+    width: 80vh;
+    margin: 15rem auto;
+    text-align: center;
+}
+
+#name{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.time{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#start,#stop,#reset{
+    padding: 10px;
+    background-color: orange;
+    border: 1px solid white;
+    cursor: pointer;
+    width: 15%;
+    margin: 0 20px;
+}
+
